@@ -30,6 +30,7 @@ export default function Hero() {
     <div className="relative w-full h-full">
       <video
         controls
+        playsInline
         className="absolute top-0 left-0 w-full h-full object-contain rounded-lg shadow-lg"
       >
         <source

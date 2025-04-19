@@ -82,45 +82,7 @@ export default function Header() {
           </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className={cn(
-            "md:hidden",
-            scrollPosition > 50 ? "text-orange-500" : "text-white"
-          )}
-          onClick={toggleMenu}
-          aria-label="Toggle Menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black z-40 md:hidden pt-20">
-          <nav className="flex flex-col items-center justify-center h-full space-y-8 p-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href + link.label}
-                href={link.href}
-                className="text-xl text-gray-300 hover:text-orange-500 transition-colors font-medium"
-                onClick={closeMenu}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button
-              variant="default"
-              className="mt-4 bg-orange-600 hover:bg-orange-700 text-white"
-              onClick={closeMenu}
-            >
-              GARANTA SUA VAGA
-            </Button>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
